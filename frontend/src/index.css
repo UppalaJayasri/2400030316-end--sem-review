@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html,
+  body,
+  #root {
+    @apply m-0 min-h-full p-0;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(251, 146, 60, 0.2), transparent 38%),
+      radial-gradient(circle at 80% 20%, rgba(45, 212, 191, 0.12), transparent 40%),
+      linear-gradient(145deg, #020617 0%, #0f172a 45%, #111827 100%);
+  }
+
+  /* Hide Scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  /* Force all amber borders to be fully visible and NOT hover-only */
+  [class*="border-amber-"] {
+    border-opacity: 1 !important;
+    --tw-border-opacity: 1 !important;
+  }
+
+  .border-amber-400, .border-amber-400\/20, .border-amber-400\/30, .border-amber-400\/40, .border-amber-400\/50, .border-amber-400\/60, .border-amber-400\/80 {
+    border-color: rgb(251 191 36) !important; /* amber-400 */
+  }
+
+  .border-amber-500, .border-amber-500\/50 {
+    border-color: rgb(245 158 11) !important; /* amber-500 */
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply border border-amber-400 bg-white/10 backdrop-blur-md;
+  }
+}
